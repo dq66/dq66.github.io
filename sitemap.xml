@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2018/11/23/mac-docker-compose-nginx-php-mysql/</loc>
+    
+    <lastmod>2018-11-30T08:48:00.634Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/11/15/mac-docker-nginx-php-mysql/</loc>
+    
+    <lastmod>2018-11-30T08:44:31.971Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2018-11-27T05:36:51.860Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2018-11-26T09:51:21.481Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2018-11-26T08:52:09.101Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/repository/index.html</loc>
+    
+    <lastmod>2018-11-26T08:50:00.662Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/links/index.html</loc>
+    
+    <lastmod>2018-11-26T07:34:49.279Z</lastmod>
+    
+  </url>
+  
+</urlset>
