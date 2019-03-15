@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-11-30T08:48:00.634Z</updated>
+  <updated>2019-03-15T08:59:30.145Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>laravel ApiServiceProvide跟setEventDispatcher</title>
+    <link href="http://yoursite.com/2019/03/15/mac-laravel/"/>
+    <id>http://yoursite.com/2019/03/15/mac-laravel/</id>
+    <published>2019-03-15T08:58:28.000Z</published>
+    <updated>2019-03-15T08:59:30.145Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天运行之前写的laravel项目 突然偶遇两个错。。。</p><h2 id="第一个bog："><a href="#第一个bog：" class="headerlink" title="第一个bog："></a>第一个bog：</h2><p><img src="/public/bog2.png" alt="aa" title="图片"></p><p>解决方法：<br>在laravel项目里面的.env文件中添加 API_PREFIX=api<br><img src="/public/bog-1.png,&quot;图片&quot;" alt="aa-1"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天运行之前写的laravel项目 突然偶遇两个错。。。&lt;/p&gt;
+&lt;h2 id=&quot;第一个bog：&quot;&gt;&lt;a href=&quot;#第一个bog：&quot; class=&quot;headerlink&quot; title=&quot;第一个bog：&quot;&gt;&lt;/a&gt;第一个bog：&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/pub
+      
+    
+    </summary>
+    
+      <category term="php开发" scheme="http://yoursite.com/categories/php%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="max" scheme="http://yoursite.com/tags/max/"/>
+    
+      <category term="php7.3" scheme="http://yoursite.com/tags/php7-3/"/>
+    
+      <category term="mysql8.0" scheme="http://yoursite.com/tags/mysql8-0/"/>
+    
+      <category term="laravel5.6" scheme="http://yoursite.com/tags/laravel5-6/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac下使用Docker-compose搭建nginx+php+mysql环境</title>
@@ -39,13 +71,13 @@
       <category term="php开发" scheme="http://yoursite.com/categories/php%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="docker-compose" scheme="http://yoursite.com/tags/docker-compose/"/>
-    
       <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
     
       <category term="php" scheme="http://yoursite.com/tags/php/"/>
     
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
+    
+      <category term="docker-compose" scheme="http://yoursite.com/tags/docker-compose/"/>
     
   </entry>
   
@@ -70,13 +102,13 @@
       <category term="php开发" scheme="http://yoursite.com/categories/php%E5%BC%80%E5%8F%91/"/>
     
     
+      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
+    
       <category term="nginx" scheme="http://yoursite.com/tags/nginx/"/>
     
       <category term="php" scheme="http://yoursite.com/tags/php/"/>
     
       <category term="mysql" scheme="http://yoursite.com/tags/mysql/"/>
-    
-      <category term="Mac" scheme="http://yoursite.com/tags/Mac/"/>
     
       <category term="docker" scheme="http://yoursite.com/tags/docker/"/>
     
