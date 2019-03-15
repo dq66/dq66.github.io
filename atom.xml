@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-15T09:16:25.474Z</updated>
+  <updated>2019-03-15T09:34:33.155Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2019/03/15/mac-laravel/"/>
     <id>http://yoursite.com/2019/03/15/mac-laravel/</id>
     <published>2019-03-15T08:58:28.000Z</published>
-    <updated>2019-03-15T09:16:25.474Z</updated>
+    <updated>2019-03-15T09:34:33.155Z</updated>
     
     <content type="html"><![CDATA[<p>今天运行之前写的laravel项目 突然偶遇两个错</p><h2 id="第一个："><a href="#第一个：" class="headerlink" title="第一个："></a>第一个：</h2><p><img src="/public/bog2.png" alt="aa" title="图片"></p><p>解决方法：<br>在laravel项目根目录里面的.env文件，并在.env文件中添加 API_PREFIX=api<br><img src="/public/bog-1.png" alt="aa-1" title="图片"><br>第一个bog就这么愉快的解决了。</p><h2 id="第二个："><a href="#第二个：" class="headerlink" title="第二个："></a>第二个：</h2><p><img src="/public/bog1.png" alt="bb" title="图片"></p><p>解决方法：<br>在laravel项目里面找到此目录”config/app.php”，并在app.php文件里面添加一下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'aliases'</span> =&gt; [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'setEventDispatcher'</span> =&gt; Illuminate\Events\Dispatcher::class,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><p>然后保存，重新运行就OK了。</p>]]></content>
     
@@ -38,7 +38,7 @@
       <category term="php开发" scheme="http://yoursite.com/categories/php%E5%BC%80%E5%8F%91/"/>
     
     
-      <category term="max" scheme="http://yoursite.com/tags/max/"/>
+      <category term="mac" scheme="http://yoursite.com/tags/mac/"/>
     
       <category term="php7.3" scheme="http://yoursite.com/tags/php7-3/"/>
     
