@@ -17,21 +17,22 @@
   <meta http-equiv="window-target" content="_top">
   
   
-  <title>laravel ApiServiceProvide跟setEventDispatcher | Hexo</title>
-  <meta name="description" content="今天运行之前写的laravel项目 突然偶遇两个错。。。 第一个bog： 解决方法：在laravel项目里面的.env文件中添加 API_PREFIX=api">
+  <title>laravel ApiServiceProvide跟setEventDispatcher的错 | Hexo</title>
+  <meta name="description" content="今天运行之前写的laravel项目 突然偶遇两个错 第一个： 解决方法：在laravel项目根目录里面的.env文件，并在.env文件中添加 API_PREFIX=api第一个bog就这么愉快的解决了。 第二个： 解决方法：在laravel项目里面找到此目录”config/app.php”，并在app.php文件里面添加一下代码：1234&apos;aliases&apos; =&amp;gt; [    ...    &apos;s">
 <meta name="keywords" content="max,php7.3,mysql8.0,laravel5.6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="laravel ApiServiceProvide跟setEventDispatcher">
+<meta property="og:title" content="laravel ApiServiceProvide跟setEventDispatcher的错">
 <meta property="og:url" content="http://yoursite.com/2019/03/15/mac-laravel/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="今天运行之前写的laravel项目 突然偶遇两个错。。。 第一个bog： 解决方法：在laravel项目里面的.env文件中添加 API_PREFIX=api">
+<meta property="og:description" content="今天运行之前写的laravel项目 突然偶遇两个错 第一个： 解决方法：在laravel项目根目录里面的.env文件，并在.env文件中添加 API_PREFIX=api第一个bog就这么愉快的解决了。 第二个： 解决方法：在laravel项目里面找到此目录”config/app.php”，并在app.php文件里面添加一下代码：1234&apos;aliases&apos; =&amp;gt; [    ...    &apos;s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/public/bog2.png">
-<meta property="og:image" content="http://yoursite.com/public/bog-1.png,%22图片%22">
-<meta property="og:updated_time" content="2019-03-15T08:59:30.145Z">
+<meta property="og:image" content="http://yoursite.com/public/bog-1.png">
+<meta property="og:image" content="http://yoursite.com/public/bog1.png">
+<meta property="og:updated_time" content="2019-03-15T09:16:25.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="laravel ApiServiceProvide跟setEventDispatcher">
-<meta name="twitter:description" content="今天运行之前写的laravel项目 突然偶遇两个错。。。 第一个bog： 解决方法：在laravel项目里面的.env文件中添加 API_PREFIX=api">
+<meta name="twitter:title" content="laravel ApiServiceProvide跟setEventDispatcher的错">
+<meta name="twitter:description" content="今天运行之前写的laravel项目 突然偶遇两个错 第一个： 解决方法：在laravel项目根目录里面的.env文件，并在.env文件中添加 API_PREFIX=api第一个bog就这么愉快的解决了。 第二个： 解决方法：在laravel项目里面找到此目录”config/app.php”，并在app.php文件里面添加一下代码：1234&apos;aliases&apos; =&amp;gt; [    ...    &apos;s">
 <meta name="twitter:image" content="http://yoursite.com/public/bog2.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://yoursite.com/2019/03/15/mac-laravel/index.html">
@@ -242,7 +243,7 @@
                 <a class="category-link" href="/categories/php开发/">php开发</a>
               </p>
               <p class="item-title">
-                <a href="/2019/03/15/mac-laravel/" class="title">laravel ApiServiceProvide跟setEventDispatcher</a>
+                <a href="/2019/03/15/mac-laravel/" class="title">laravel ApiServiceProvide跟setEventDispatcher的错</a>
               </p>
               <p class="item-date">
                 <time datetime="2019-03-15T08:58:28.000Z" itemprop="datePublished">2019-03-15</time>
@@ -300,7 +301,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      laravel ApiServiceProvide跟setEventDispatcher
+      laravel ApiServiceProvide跟setEventDispatcher的错
     </h1>
   
 
@@ -333,9 +334,12 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>今天运行之前写的laravel项目 突然偶遇两个错。。。</p>
-<h2 id="第一个bog："><a href="#第一个bog：" class="headerlink" title="第一个bog："></a>第一个bog：</h2><p><img src="/public/bog2.png" alt="aa" title="图片"></p>
-<p>解决方法：<br>在laravel项目里面的.env文件中添加 API_PREFIX=api<br><img src="/public/bog-1.png,&quot;图片&quot;" alt="aa-1"></p>
+        <p>今天运行之前写的laravel项目 突然偶遇两个错</p>
+<h2 id="第一个："><a href="#第一个：" class="headerlink" title="第一个："></a>第一个：</h2><p><img src="/public/bog2.png" alt="aa" title="图片"></p>
+<p>解决方法：<br>在laravel项目根目录里面的.env文件，并在.env文件中添加 API_PREFIX=api<br><img src="/public/bog-1.png" alt="aa-1" title="图片"><br>第一个bog就这么愉快的解决了。</p>
+<h2 id="第二个："><a href="#第二个：" class="headerlink" title="第二个："></a>第二个：</h2><p><img src="/public/bog1.png" alt="bb" title="图片"></p>
+<p>解决方法：<br>在laravel项目里面找到此目录”config/app.php”，并在app.php文件里面添加一下代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'aliases'</span> =&gt; [</span><br><span class="line">    ...</span><br><span class="line">    <span class="string">'setEventDispatcher'</span> =&gt; Illuminate\Events\Dispatcher::class,</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>然后保存，重新运行就OK了。</p>
 
       
     </div>
@@ -345,7 +349,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://yoursite.com/2019/03/15/mac-laravel/" title="laravel ApiServiceProvide跟setEventDispatcher" target="_blank" rel="external">http://yoursite.com/2019/03/15/mac-laravel/</a>
+      <a href="http://yoursite.com/2019/03/15/mac-laravel/" title="laravel ApiServiceProvide跟setEventDispatcher的错" target="_blank" rel="external">http://yoursite.com/2019/03/15/mac-laravel/</a>
     </li>
     
     <li class="post-copyright-license">
