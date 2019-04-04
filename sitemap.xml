@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2019/04/04/php-mst/</loc>
+    
+    <lastmod>2019-04-04T08:08:49.227Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2019/04/03/php/</loc>
     
     <lastmod>2019-04-03T03:08:53.773Z</lastmod>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>PHP面试常出现的题型 | Hexo</title>
+  <meta name="description" content="最近想换工作搜索的一些面试题，整理一下方便以后还会用到。 单引号和双引号的区别？123答：1.双引号内部变量会被解析，单引号则不解析。    2.单引号解析速度比双引号块。    3.单引号只能解析部分特殊字符，双引号可以解析所有特殊字符。 get和post的form表单的action有什么区别？12345答： 1.get是从服务器上获取数据，post是向服务器传送数据。    2.get是把参数">
+<meta name="keywords" content="php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP面试常出现的题型">
+<meta property="og:url" content="http://yoursite.com/2019/04/04/php-mst/index.html">
+<meta property="og:site_name" content="Hello">
+<meta property="og:description" content="最近想换工作搜索的一些面试题，整理一下方便以后还会用到。 单引号和双引号的区别？123答：1.双引号内部变量会被解析，单引号则不解析。    2.单引号解析速度比双引号块。    3.单引号只能解析部分特殊字符，双引号可以解析所有特殊字符。 get和post的form表单的action有什么区别？12345答： 1.get是从服务器上获取数据，post是向服务器传送数据。    2.get是把参数">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-04T08:08:49.227Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP面试常出现的题型">
+<meta name="twitter:description" content="最近想换工作搜索的一些面试题，整理一下方便以后还会用到。 单引号和双引号的区别？123答：1.双引号内部变量会被解析，单引号则不解析。    2.单引号解析速度比双引号块。    3.单引号只能解析部分特殊字符，双引号可以解析所有特殊字符。 get和post的form表单的action有什么区别？12345答： 1.get是从服务器上获取数据，post是向服务器传送数据。    2.get是把参数">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/04/04/php-mst/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dq66" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">DQ</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Guiyang, Guizhou</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索">
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech="">
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dq66" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope="" itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/php开发/">php开发</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel5-6/">laravel5.6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql8-0/">mysql8.0</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php7-3/">php7.3</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Mac/" style="font-size: 13px;">Mac</a> <a href="/tags/docker/" style="font-size: 13px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 13px;">docker-compose</a> <a href="/tags/laravel5-6/" style="font-size: 13px;">laravel5.6</a> <a href="/tags/mac/" style="font-size: 13px;">mac</a> <a href="/tags/mysql/" style="font-size: 13.5px;">mysql</a> <a href="/tags/mysql8-0/" style="font-size: 13px;">mysql8.0</a> <a href="/tags/nginx/" style="font-size: 13.5px;">nginx</a> <a href="/tags/php/" style="font-size: 14px;">php</a> <a href="/tags/php7-3/" style="font-size: 13px;">php7.3</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/04/04/php-mst/" class="title">PHP面试常出现的题型</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-04-04T04:02:32.000Z" itemprop="datePublished">2019-04-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/04/03/php/" class="title">php 获取当前域名、主机、URL等等</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-04-03T02:27:20.000Z" itemprop="datePublished">2019-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/03/15/mac-laravel/" class="title">laravel ApiServiceProvide跟setEventDispatcher的错</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-03-15T08:58:28.000Z" itemprop="datePublished">2019-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/11/23/mac-docker-compose-nginx-php-mysql/" class="title">Mac下使用Docker-compose搭建nginx+php+mysql环境</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-11-23T08:09:01.000Z" itemprop="datePublished">2018-11-23</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/11/15/mac-docker-nginx-php-mysql/" class="title">Mac下使用Docker搭建Nginx+Php7.2+Mysql环境</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-11-15T09:29:08.000Z" itemprop="datePublished">2018-11-15</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-php-mst" class="article article-type-post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP面试常出现的题型
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/04/04/php-mst/" class="article-date">
+	  <time datetime="2019-04-04T04:02:32.000Z" itemprop="datePublished">2019-04-04</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/php开发/">php开发</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/php/">php</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/04/04/php-mst/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>最近想换工作搜索的一些面试题，整理一下方便以后还会用到。</p>
+<p>单引号和双引号的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：1.双引号内部变量会被解析，单引号则不解析。</span><br><span class="line">    2.单引号解析速度比双引号块。</span><br><span class="line">    3.单引号只能解析部分特殊字符，双引号可以解析所有特殊字符。</span><br></pre></td></tr></table></figure></p>
+<p>get和post的form表单的action有什么区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答： 1.get是从服务器上获取数据，post是向服务器传送数据。</span><br><span class="line">    2.get是把参数数据队列加到提交表单的action属性所指的URL中，值和表单内各个字段--对应，在URL可以看到。</span><br><span class="line">    post是通过http post机制，将表单内各个字段与其内容放置在HTML header内一起传送到action属性所指的URL地址。用户看不到这个过程。</span><br><span class="line">    3.get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般默认为不受限制。</span><br><span class="line">    4.get安全性非常低，post安全性比较高。但是执行效率get却比post方法好。</span><br></pre></td></tr></table></figure></p>
+<p>session工作原理？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">答：简单：为每个访问者创建一个唯一的id(session_id)</span><br><span class="line">        然后基于这个ID来存储变量</span><br><span class="line">        而ID存储在cookie中，或者通过URL进行传递</span><br><span class="line"></span><br><span class="line">    详细：浏览器与服务器之间使用http协议通讯，http协议是无状态的协议，问题就出现了：服务器不知道你是谁，你又做了什么。使用session之后就可以解决这个问题；但问题又出现了，服务器又是怎么来表示不同的用户和浏览器呢？在session的工作机制中，session会给每个访问者创建一个唯一的ID：session_id（这里的id类似于每个人的身份证号），服务器会将这个ID返回给客户端浏览器并存储在内存中，也就是cookie，浏览器关闭后会清空这个cookie；</span><br><span class="line">假如浏览器意外关闭，服务器保存的session数据不会立马清除，此时数据还会存在，只要我们知道那个session_id，就可以继续通过请求获得当前session的信息，但是session有个保存过期时间，一旦超过规定的时间没有客户端请求时，服务器就会清除当前的session信息。</span><br></pre></td></tr></table></figure></p>
+<p>禁用cookie还能用session吗?<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：能使用。</span><br><span class="line">    通过GET或者POST请求，传递参数的方式传递sessionid不就可以了吗。但是这样做的方式是不可取的。</span><br></pre></td></tr></table></figure></p>
+<p>session与cookie的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、存储位置：session存储于服务器，cookie存储于浏览器</span><br><span class="line">2、安全性：session安全性比cookie高</span><br><span class="line">3、session为‘会话服务’，在使用时需要开启服务，cookie不需要开启，就可以直接使用。</span><br></pre></td></tr></table></figure></p>
+<p>如何取出数组最后一个值？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">例如：$list = array(&apos;22&apos;, &apos;ss&apos;, &apos;234&apos;);</span><br><span class="line"></span><br><span class="line">答：</span><br><span class="line">1.echo end($list);</span><br><span class="line">2.echo $list[count($list) - 1];</span><br><span class="line">3.array_pop($list);</span><br></pre></td></tr></table></figure></p>
+<p>Git分支合并？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：merge,rebase,cherry-pick</span><br><span class="line">例如：</span><br><span class="line">    git checkout master</span><br><span class="line">    git merge test</span><br></pre></td></tr></table></figure></p>
+<p>翻转字符串”example”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">//PHP自带strrev()函数</span><br><span class="line">  $str = &quot;Hello World!&quot;;</span><br><span class="line">  echo strrev($str);</span><br><span class="line">//str_split()函数把字符串的每个字符放入数组中，for循环遍历数组键，并拼接值的过程</span><br><span class="line">$newstr = &apos;&apos;;</span><br><span class="line">$str = &apos;Hello World!&apos;;</span><br><span class="line">$str_arr = str_split($str);</span><br><span class="line">for ($i = count($str_arr) - 1; $i &gt;= 0; $i--) &#123;</span><br><span class="line">    $newstr .= $str[$i];</span><br><span class="line">&#125;</span><br><span class="line">echo $newstr;</span><br></pre></td></tr></table></figure></p>
+<p>打印出2014-09-23 23:08:01的时间戳<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">答：时间戳：echo strtotime(&apos;2014-09-23 23:08:01&apos;);</span><br><span class="line"></span><br><span class="line">时间戳转换成日期：</span><br><span class="line">$str = strtotime(&apos;2014-09-23 23:08:01&apos;);</span><br><span class="line"></span><br><span class="line">echo date(&apos;Y-m-d H:i:s&apos;,$str);</span><br><span class="line"></span><br><span class="line">打印出前一天的时间，格式是2018-05-31 12：14：24</span><br><span class="line">答：echo date(&apos;Y-m-d H:i:s&apos;,strtotime(&apos;-1 days&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>有一个网页地址，例如<a href="http://www.baidu.com，如何得到它的内容？" target="_blank" rel="noopener">http://www.baidu.com，如何得到它的内容？</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：echo file_get_contents(&apos;http://www.baidu.com&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>debug方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">答：1.首先修改php.ini里面把错误开关全部修改为on，然后在代码里面执行下面代码：</span><br><span class="line">    ini_set(&apos;display_errors&apos;,1); //错误信息</span><br><span class="line">    ini_set(&apos;display_startup_errors&apos;,1); //php启动错误信息</span><br><span class="line">    error_reporting(-1); //打印出所有的错误信息</span><br><span class="line"></span><br><span class="line">    2.直接在php文件前面加上两行码：</span><br><span class="line">    ini_set(&apos;display_errors&apos;,&apos;On&apos;);</span><br><span class="line">    error_reporting(E_ALL);</span><br></pre></td></tr></table></figure></p>
+<p>Composer用法？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">1.生成项目：composer create-project --prefer-dist laravel/laravel bolg(生成laravel项目)</span><br><span class="line">2.安装依赖包：比如我们的项目现在需要依赖monolog/monolog这样的一个包，那接下来，我们就需要在composer.json中写入以下内容：</span><br><span class="line">&#123;</span><br><span class="line">    &quot;require&quot;:&#123;</span><br><span class="line">        &quot;monolog/monolog&quot;:&quot;1.0.*&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">接下来在命令行执行：composer install</span><br><span class="line"></span><br><span class="line">3.更新依赖版本：composer update</span><br><span class="line">4.自动加载：已经存在的库，我们要把它加载到我们的项目中，对于库的自动加载信息，Composer生成了一个vendor/autoload.php文件。我们可以简单的引入这个文件，这样就会得到一个免费的自动加载支持。而这一切都是Composer来帮助我们完成的，我们只需要在应用层使用即可。例如：</span><br><span class="line">    require &apos;vendor/autoload.php&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>Linux<br>挑选两个命令（如：find、awk）用法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">答：find 文件搜索，</span><br><span class="line">    find / -name file1  //从&apos;/&apos;开始进入根文件系统搜文件和目录</span><br><span class="line"></span><br><span class="line">    awk  行处理器</span><br><span class="line">    -F指定分隔符（$1 指指定分隔符后，第一个字段，$3第三个字段， \t是制表符</span><br><span class="line">一个或多个连续的空格或制表符看做一个定界符，即多个空格看做一个空格）</span><br><span class="line">    awk -F&quot;:&quot;&apos;&#123;print $1 $3&#125;&apos; /etc/passwd  //$1与$3相连输出，不分隔</span><br><span class="line">    awk -F&quot;:&quot;&apos;&#123;print $1,$3&#125;&apos; /etc/passwd  //多了一个逗号，$1与$3使用逗号分隔</span><br><span class="line"></span><br><span class="line">    匹配代码块（//纯字符匹配   !//纯字符不匹配   ~//字段值匹配    !~//字段值不匹配 ）</span><br><span class="line">    awk &apos;/[2][7][7]*/&#123;print $0&#125;&apos; /etc/passwd //匹配包含27为数字开头的行，如：27，277，2777...</span><br></pre></td></tr></table></figure></p>
+<p>PHP中魔术方法？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">答: __construct()   //实例化对象时自动调用</span><br><span class="line">    __destruct()    //销毁对象或脚本执行结束时自动调用</span><br><span class="line">    __call()        //调用对象不存在的方法时执行此函数</span><br><span class="line">    __get()         //获取对象不存在的属性时执行此函数</span><br><span class="line">    __set()         //设置对象不存在的属性时执行此函数</span><br><span class="line">    __isset()       //检测对象的某个属性是否存在是执行此函数</span><br><span class="line">    __unset()       //销毁对象的某个属性时执行此函数</span><br><span class="line">    __toString()    //将对象当作字符串输出时执行此函数</span><br><span class="line">    __clone()       //克隆对象时执行此函数</span><br><span class="line">    __autoload()    //实例化对象时，当类不存在时，执行此函数自动加载类</span><br><span class="line">    __sleep()       //serialize之前被调用，可以指定要序列化的对象属性</span><br></pre></td></tr></table></figure></p>
+<p>谈谈你对MVC的理解：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">答: MVC是Model-View-Controller的简称，分别是模型-视图-控制器。</span><br><span class="line">    MVC是一种框架模型，它强制的把应用程序的输入、处理和输出分开。</span><br><span class="line"></span><br><span class="line">    MVC的处理过程：首先控制器接收用户的请求，调用相应的模型来进行业务处理，</span><br><span class="line">    并返回数据给控制器。控制器调用相应的视图来显示处理的结果。并通过视图呈现给用户。</span><br><span class="line">    或</span><br><span class="line">    由控制器层调用模型处理数据，然后将数据映射到视图层进行显示。</span><br><span class="line"></span><br><span class="line">    优点：耦合性低，重用性高。</span><br><span class="line"></span><br><span class="line">    缺点：没有明确的定义，不合适小型、中等规模的应用程序，增加系统结构实现的复杂性。</span><br></pre></td></tr></table></figure></p>
+<p>什么是SQL注入，如何防范？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">答：所谓SQL注入，就是通过把SQL命令插入到web表单提交或页面请求的字符串，</span><br><span class="line">    最终达到欺骗服务器执行恶意的SQL命令。</span><br><span class="line">    防范措施如下：</span><br><span class="line">    1、永远不要信任用户的输入。对用户的输入进行校验，过滤关键字和转义字符。</span><br><span class="line">    2、永远不要使用动态拼接SQL，可以使用参数化的SQL或直接使用存储有限的数据库连接。</span><br><span class="line">    3、不要把机密信息直接存放，加密或者hash掉密码和敏感信息。</span><br><span class="line">    防止SQL注入漏洞的函数有：addslashes()，mysql_escape_string()</span><br></pre></td></tr></table></figure></p>
+<p>对json数据格式的理解？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答：json是一种轻量级的数据交换格式，json数据格式固定，可以被多种语言用作数据的传递。</span><br></pre></td></tr></table></figure></p>
+<p>print、echo、print_r有什么区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">答：1.echo1和print都可以做输出，不同的是，echo不是函数，没有返回值，而print是一个函数有返回值，所有相对而言如果只是输出echo会更快，而print_r通常用于打印变量的相关信息，通常在调试中使用。</span><br><span class="line">    2、print是打印字符串</span><br><span class="line">    3、print_r则是打印复合类型 如：数组、对象</span><br></pre></td></tr></table></figure></p>
+<p>char和varchar的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：char是一种固定长度的类型，varchar则是一种可变长度的类型。</span><br><span class="line">    char的数据长度大于char规定的长度就会去掉超过的数据，而varchar是在每个值长度上再加1字节</span><br></pre></td></tr></table></figure></p>
+<p>if与switch的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：首先if只是单纯地一个接一个比较；if...else每个条件都计算一般；</span><br><span class="line">    而switch是使用了binary tree算法；绝大部分情况下switch会快一点，除非是if-else的第一个条件就为true。编译器编译switch与编译if-else是不同的，不管有多少个case，都直接跳转，不需要逐个比较查询；而且switch只计算一次值；有很多else if的时候，用switch case比较清晰。</span><br><span class="line"></span><br><span class="line">    总结：当只有分支比较少的时候，if效率比swit高（因为switch有跳转表）；分支比较多的时候，那当然是switch高了。</span><br></pre></td></tr></table></figure></p>
+<p>MySQL的存储引擎，myisam和innodb的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：myisam是非事务的存储引擎；适合用于频繁查询的应用；不支持事务。适合小数据，小并发。</span><br><span class="line">    innodb是支持事务的存储引擎；适合于插入和更新操作比较多的应用；适合大数据，大并发。</span><br></pre></td></tr></table></figure></p>
+<p>MySQL数据库作发布系统的存储，一天五万条以上的增量，预计运维三年,怎么优化？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答：1、设计良好的数据库结构，允许部分数据冗余，尽量避免join查询，提高效率。</span><br><span class="line">    2、选择合适的表字段数据类型和存储引擎，适当的添加索引。</span><br><span class="line">    3、做MySQL主从复制读写分离。</span><br><span class="line">    4、对数据表进行分表，减少单表中的数据量提高查询速度。</span><br><span class="line">    5、添加缓存机制，如：redis、memcached等。</span><br></pre></td></tr></table></figure></p>
+<p>对于大流量的网站,您采用什么样的方法来解决各页面访问量统计问题？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">答：1、确认服务器是否能支撑当前访问量。</span><br><span class="line">    2、优化数据库访问。</span><br><span class="line">    3、禁止外部访问连接（盗链），比如图片盗链。</span><br><span class="line">    4、控制文件下载。</span><br><span class="line">    5、做负载均衡，使用不同主机分流。</span><br></pre></td></tr></table></figure></p>
+<p>简述 private、 protected、 public修饰符的访问权限。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">答：</span><br><span class="line">    private：私有成员，在类的内部才可以访问。</span><br><span class="line">    protected：保护成员，该类内部和继承类中可以访问。</span><br><span class="line">    public：公共成员，完全公开，没有访问限制。</span><br></pre></td></tr></table></figure></p>
+<p>堆和栈的区别？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：栈是编译期间就分配好的内存空间，因此你的代码中必须就栈的大小明确的定义；</span><br><span class="line">    堆是程序运行期间动态分配的内存空间，你可以根据程序的运行情况确定要分配的堆内存的大小。</span><br></pre></td></tr></table></figure></p>
+<p>$this和self、parent这三个关键词分别代表什么？在哪些场合下使用？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">答：$this 当前对象</span><br><span class="line">    self 当前类</span><br><span class="line">    parent 当前类的父类</span><br><span class="line">    在当前类中使用：</span><br><span class="line">        $this使用-&gt;调用属性和方法。</span><br><span class="line">        self使用::调用。</span><br></pre></td></tr></table></figure></p>
+<p>作用域操作符::如何使用？都在哪些场合下使用？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">答：1、调用类常量</span><br><span class="line">    2、调用静态方法（使用static修饰的类方法）</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/04/04/php-mst/" title="PHP面试常出现的题型" target="_blank" rel="external">http://yoursite.com/2019/04/04/php-mst/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dq66" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dq66" target="_blank"><span class="text-dark">DQ</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom="">
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/04/03/php/" title="php 获取当前域名、主机、URL等等"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dq66" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
