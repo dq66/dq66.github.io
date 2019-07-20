@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000">
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top">
+  
+  
+  <title>laravel+vue 服务器部署 | Hexo</title>
+  <meta name="description" content="首先在本地创建laravel+vue+iview项目 安装Laravel在命令行输入一下命令1composer create-project --prefer-dist laravel/laravel blog 然后等待创建完laravel项目后，进入刚创建的项目根目录，执行php artisan serve,浏览器访问 127.0.0.1:8000 安装Vuelaravel默认是带vue的环境，">
+<meta name="keywords" content="laravel,vue,iview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel+vue 服务器部署">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/laravel-vue/index.html">
+<meta property="og:site_name" content="Hello">
+<meta property="og:description" content="首先在本地创建laravel+vue+iview项目 安装Laravel在命令行输入一下命令1composer create-project --prefer-dist laravel/laravel blog 然后等待创建完laravel项目后，进入刚创建的项目根目录，执行php artisan serve,浏览器访问 127.0.0.1:8000 安装Vuelaravel默认是带vue的环境，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/public/laravel.png">
+<meta property="og:image" content="http://yoursite.com/public/vue.png">
+<meta property="og:image" content="http://yoursite.com/public/vue3.png">
+<meta property="og:image" content="http://yoursite.com/public/router.png">
+<meta property="og:image" content="http://yoursite.com/public/vue2.png">
+<meta property="og:image" content="http://yoursite.com/public/router2.png">
+<meta property="og:image" content="http://yoursite.com/public/llq.png">
+<meta property="og:updated_time" content="2019-07-20T04:12:21.055Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel+vue 服务器部署">
+<meta name="twitter:description" content="首先在本地创建laravel+vue+iview项目 安装Laravel在命令行输入一下命令1composer create-project --prefer-dist laravel/laravel blog 然后等待创建完laravel项目后，进入刚创建的项目根目录，执行php artisan serve,浏览器访问 127.0.0.1:8000 安装Vuelaravel默认是带vue的环境，">
+<meta name="twitter:image" content="http://yoursite.com/public/laravel.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/2019/07/19/laravel-vue/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hello" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  
+  
+  
+</head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/dq66" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.png" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">DQ</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Guiyang, Guizhou</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索">
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech="">
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope="" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dq66" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope="" itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/php开发/">php开发</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/">Mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/">docker-compose</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iview/">iview</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel/">laravel</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/laravel5-6/">laravel5.6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql8-0/">mysql8.0</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php7-3/">php7.3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Mac/" style="font-size: 13px;">Mac</a> <a href="/tags/docker/" style="font-size: 13px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 13px;">docker-compose</a> <a href="/tags/iview/" style="font-size: 13px;">iview</a> <a href="/tags/laravel/" style="font-size: 13px;">laravel</a> <a href="/tags/laravel5-6/" style="font-size: 13px;">laravel5.6</a> <a href="/tags/mac/" style="font-size: 13px;">mac</a> <a href="/tags/mysql/" style="font-size: 13.5px;">mysql</a> <a href="/tags/mysql8-0/" style="font-size: 13px;">mysql8.0</a> <a href="/tags/nginx/" style="font-size: 13.5px;">nginx</a> <a href="/tags/php/" style="font-size: 14px;">php</a> <a href="/tags/php7-3/" style="font-size: 13px;">php7.3</a> <a href="/tags/vue/" style="font-size: 13px;">vue</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/07/19/laravel-vue/" class="title">laravel+vue 服务器部署</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-07-19T08:10:18.000Z" itemprop="datePublished">2019-07-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/04/04/php-mst/" class="title">PHP面试常出现的题型</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-04-04T04:02:32.000Z" itemprop="datePublished">2019-04-04</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/04/03/php/" class="title">php 获取当前域名、主机、URL等等</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-04-03T02:27:20.000Z" itemprop="datePublished">2019-04-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2019/03/15/mac-laravel/" class="title">laravel ApiServiceProvide跟setEventDispatcher的错</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-03-15T08:58:28.000Z" itemprop="datePublished">2019-03-15</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/php开发/">php开发</a>
+              </p>
+              <p class="item-title">
+                <a href="/2018/11/23/mac-docker-compose-nginx-php-mysql/" class="title">Mac下使用Docker-compose搭建nginx+php+mysql环境</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2018-11-23T08:09:01.000Z" itemprop="datePublished">2018-11-23</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-laravel-vue" class="article article-type-post" itemscope="" itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      laravel+vue 服务器部署
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/07/19/laravel-vue/" class="article-date">
+	  <time datetime="2019-07-19T08:10:18.000Z" itemprop="datePublished">2019-07-19</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/php开发/">php开发</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/iview/">iview</a>, <a class="article-tag-link" href="/tags/laravel/">laravel</a>, <a class="article-tag-link" href="/tags/vue/">vue</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/07/19/laravel-vue/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>首先在本地创建laravel+vue+iview项目</p>
+<h2 id="安装Laravel"><a href="#安装Laravel" class="headerlink" title="安装Laravel"></a>安装Laravel</h2><p>在命令行输入一下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project --prefer-dist laravel/laravel blog</span><br></pre></td></tr></table></figure></p>
+<p>然后等待创建完laravel项目后，进入刚创建的项目根目录，执行php artisan serve,浏览器访问 127.0.0.1:8000<br><img src="/public/laravel.png" alt="aa" title="图片"></p>
+<h2 id="安装Vue"><a href="#安装Vue" class="headerlink" title="安装Vue"></a>安装Vue</h2><p>laravel默认是带vue的环境，所有接下来就直接在项目根目录执行该命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>该命令执行完后，接下来找到resources\assets目录，会发现laravel默认了一个Vue的例子。</p>
+<p><img src="/public/vue.png" alt="aa" title="图片"></p>
+<h2 id="安装Vux-router组件"><a href="#安装Vux-router组件" class="headerlink" title="安装Vux-router组件"></a>安装Vux-router组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save</span><br></pre></td></tr></table></figure>
+<p>然后找到resources\views\welcome.blade.php 文件，将其修改为下面的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;title&gt;Laravel&lt;/title&gt;</span><br><span class="line">        &lt;meta name=&quot;csrf-token&quot; content=&quot;&#123;&#123; csrf_token() &#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;!-- Fonts --&gt;</span><br><span class="line">        &lt;link href=&quot;https://fonts.googleapis.com/css?family=Nunito:200,600&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src=&quot;/js/app.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再在 resources\assets\js 目录下创建router\index.js 和 App.vue 文件</p>
+<p><img src="/public/vue3.png" alt="aa" title="图片"></p>
+<p>在App.vue文件中添加一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在router\index.js文件中添加一下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Router);</span><br><span class="line"></span><br><span class="line">export default new Router(&#123;</span><br><span class="line">    routes: [&#123;</span><br><span class="line">        name: &quot;test&quot;,</span><br><span class="line">        path: &quot;/&quot;,</span><br><span class="line">        components: require(&apos;../components/Example.vue&apos;),</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>然后我们来修改app.js文件，我们需要引入刚才的路由文件，在Vue创建时添加路由和App.vue</p>
+<p><img src="/public/router.png" alt="aa" title="图片"></p>
+<p>最后执行以下其中一个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run dev  // 本地环境编译</span><br><span class="line">或 npm run watch  //实时监测前端资源更新，并编译</span><br></pre></td></tr></table></figure></p>
+<p>命令执行好了以后，可以在浏览器中看以下内容</p>
+<p><img src="/public/vue2.png" alt="aa" title="图片"></p>
+<h2 id="安装Iview"><a href="#安装Iview" class="headerlink" title="安装Iview"></a>安装Iview</h2><p>在命令行输入一下命令,不懂的可以先去<a href="https://www.iviewui.com" target="_blank" rel="noopener">iview 官方文档</a>查看教程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install iview --save</span><br></pre></td></tr></table></figure></p>
+<p>找到resources\assets\js\app.js文件，添加一下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import iView from &apos;iview&apos;;</span><br><span class="line">import &apos;iview/dist/styles/iview.css&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(iView)</span><br></pre></td></tr></table></figure></p>
+<p>在resources\assets\js\components目录下创建一个新的文件，例如：Hoem.vue文件，内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">    .layout&#123;</span><br><span class="line">        border: 1px solid #d7dde4;</span><br><span class="line">        background: #f5f7f9;</span><br><span class="line">        position: relative;</span><br><span class="line">        border-radius: 4px;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line">    .layout-header-bar&#123;</span><br><span class="line">        background: #fff;</span><br><span class="line">        box-shadow: 0 1px 1px rgba(0,0,0,.1);</span><br><span class="line">    &#125;</span><br><span class="line">    .layout-logo-left&#123;</span><br><span class="line">        width: 90%;</span><br><span class="line">        height: 30px;</span><br><span class="line">        background: #5b6270;</span><br><span class="line">        border-radius: 3px;</span><br><span class="line">        margin: 15px auto;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu-icon&#123;</span><br><span class="line">        transition: all .3s;</span><br><span class="line">    &#125;</span><br><span class="line">    .rotate-icon&#123;</span><br><span class="line">        transform: rotate(-90deg);</span><br><span class="line">    &#125;</span><br><span class="line">    .menu-item span&#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        width: 69px;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        vertical-align: bottom;</span><br><span class="line">        transition: width .2s ease .2s;</span><br><span class="line">    &#125;</span><br><span class="line">    .menu-item i&#123;</span><br><span class="line">        transform: translateX(0px);</span><br><span class="line">        transition: font-size .2s ease, transform .2s ease;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        font-size: 16px;</span><br><span class="line">    &#125;</span><br><span class="line">    .collapsed-menu span&#123;</span><br><span class="line">        width: 0px;</span><br><span class="line">        transition: width .2s ease;</span><br><span class="line">    &#125;</span><br><span class="line">    .collapsed-menu i&#123;</span><br><span class="line">        transform: translateX(5px);</span><br><span class="line">        transition: font-size .2s ease .2s, transform .2s ease .2s;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">        font-size: 22px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">        &lt;Layout&gt;</span><br><span class="line">            &lt;Sider ref=&quot;side1&quot; hide-trigger collapsible :collapsed-width=&quot;78&quot; v-model=&quot;isCollapsed&quot;&gt;</span><br><span class="line">                &lt;Menu active-name=&quot;1-2&quot; theme=&quot;dark&quot; width=&quot;auto&quot; :class=&quot;menuitemClasses&quot;&gt;</span><br><span class="line">                    &lt;MenuItem name=&quot;1-1&quot;&gt;</span><br><span class="line">                        &lt;Icon type=&quot;ios-navigate&quot;&gt;&lt;/Icon&gt;</span><br><span class="line">                        &lt;span&gt;Option 1&lt;/span&gt;</span><br><span class="line">                    &lt;/MenuItem&gt;</span><br><span class="line">                    &lt;MenuItem name=&quot;1-2&quot;&gt;</span><br><span class="line">                        &lt;Icon type=&quot;ios-search&quot;&gt;&lt;/Icon&gt;</span><br><span class="line">                        &lt;span&gt;Option 2&lt;/span&gt;</span><br><span class="line">                    &lt;/MenuItem&gt;</span><br><span class="line">                    &lt;MenuItem name=&quot;1-3&quot;&gt;</span><br><span class="line">                        &lt;Icon type=&quot;ios-settings&quot;&gt;&lt;/Icon&gt;</span><br><span class="line">                        &lt;span&gt;Option 3&lt;/span&gt;</span><br><span class="line">                    &lt;/MenuItem&gt;</span><br><span class="line">                &lt;/Menu&gt;</span><br><span class="line">            &lt;/Sider&gt;</span><br><span class="line">            &lt;Layout&gt;</span><br><span class="line">                &lt;Header :style=&quot;&#123;padding: 0&#125;&quot; class=&quot;layout-header-bar&quot;&gt;</span><br><span class="line">                    &lt;Icon @click.native=&quot;collapsedSider&quot; :class=&quot;rotateIcon&quot; :style=&quot;&#123;margin: &apos;0 20px&apos;&#125;&quot; type=&quot;md-menu&quot; size=&quot;24&quot;&gt;&lt;/Icon&gt;</span><br><span class="line">                &lt;/Header&gt;</span><br><span class="line">                &lt;Content :style=&quot;&#123;margin: &apos;20px&apos;, background: &apos;#fff&apos;, minHeight: &apos;260px&apos;&#125;&quot;&gt;</span><br><span class="line">                    Content</span><br><span class="line">                &lt;/Content&gt;</span><br><span class="line">            &lt;/Layout&gt;</span><br><span class="line">        &lt;/Layout&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        data () &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                isCollapsed: false</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            rotateIcon () &#123;</span><br><span class="line">                return [</span><br><span class="line">                    &apos;menu-icon&apos;,</span><br><span class="line">                    this.isCollapsed ? &apos;rotate-icon&apos; : &apos;&apos;</span><br><span class="line">                ];</span><br><span class="line">            &#125;,</span><br><span class="line">            menuitemClasses () &#123;</span><br><span class="line">                return [</span><br><span class="line">                    &apos;menu-item&apos;,</span><br><span class="line">                    this.isCollapsed ? &apos;collapsed-menu&apos; : &apos;&apos;</span><br><span class="line">                ]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            collapsedSider () &#123;</span><br><span class="line">                this.$refs.side1.toggleCollapse();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>再到router\index.js文件中添加路由</p>
+<p><img src="/public/router2.png" alt="aa" title="图片"></p>
+<p>执行以下其中一个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm run dev  // 本地环境编译</span><br><span class="line">或 npm run watch  //实时监测前端资源更新，并编译</span><br></pre></td></tr></table></figure></p>
+<p>去浏览器访问 127.0.0.1:8000/home</p>
+<p><img src="/public/llq.png" alt="aa" title="图片"></p>
+<p>到此 本地就搭建好了。</p>
+<h2 id="部署上线"><a href="#部署上线" class="headerlink" title="部署上线"></a>部署上线</h2><p>第一次部署laravel+vue的项目，百度了好多还是没解决，最终是我同事帮忙解决的。好了不废话了，干正事。</p>
+<h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>在写的好的laravel项目根目录下，命令行运行一下 npm run prod 命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run prod  //生产环境编译</span><br></pre></td></tr></table></figure></p>
+<h2 id="第二步："><a href="#第二步：" class="headerlink" title="第二步："></a>第二步：</h2><p>再将laravel项目打包上传到服务器上，跟平时一样部署，好了直接访问你的域名。<br>提示（如果页面有变动，先在本地npm run prod，再找到服务器上的项目根目录下 public\js\app.js 文件删除，重新上传本地项目根目录下 public\js\app.js文件,就可以了。）</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://yoursite.com/2019/07/19/laravel-vue/" title="laravel+vue 服务器部署" target="_blank" rel="external">http://yoursite.com/2019/07/19/laravel-vue/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dq66" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dq66" target="_blank"><span class="text-dark">DQ</span><small class="ml-1x">Web Developer &amp; Designer</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom="">
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2019/04/04/php-mst/" title="PHP面试常出现的题型"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫">
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope="" itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/dq66" target="_blank" title="Github" data-toggle="tooltip" data-placement="top"><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle="tooltip" data-placement="top"><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script src="/js/plugin.min.js"></script>
+<script src="/js/application.js"></script>
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+</body>
+</html>
